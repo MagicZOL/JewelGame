@@ -7,12 +7,14 @@ using System;
 //버튼의 정보 저장
 public class JewelItemButton : MonoBehaviour
 {
-    [SerializeField] Text moneyText;
-
     public Action<JewelItemButton> jewelItemDelegate;
 
     public JewelItemInfo? jewelItemInfo;
 
+    private void Start()
+    {
+        
+    }
     public void OnClick()
     {
         jewelItemDelegate(this);
@@ -24,7 +26,11 @@ public class JewelItemButton : MonoBehaviour
         if (jewelItemInfo.HasValue)
         {
             JewelItemInfo jewelItem = jewelItemInfo.Value;
-            //moneyText.text += jewelItem.getPrize;
+
+            Money money = GameObject.Find("Money").GetComponent<Money>();
+            money.prize = jewelItem.getPrize;
+
+            money.PrizeValue();
         }
     }
 }

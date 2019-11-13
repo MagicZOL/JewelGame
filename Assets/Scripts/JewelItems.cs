@@ -20,7 +20,6 @@ public class JewelItems : MonoBehaviour
         {
             JewelItemButton jewelItemButtonScript = Instantiate(jewelItemButtonPrefab, transform).GetComponent<JewelItemButton>();
             jewelItemButtonScript.GetComponentInChildren<Image>().sprite = sprite;
-            //jewelItemButtonScript.jewelItemDelegate = this; //델리게이트에 버튼자신의 정보를 알려줌
             jewelItemButtonList.Add(jewelItemButtonScript); //버튼들을 리스트에 저장함
 
             jewelItemButtonScript.jewelItemDelegate = (jewelItemButton) =>
@@ -43,18 +42,6 @@ public class JewelItems : MonoBehaviour
 
         AddJewelItemInfo();
     }
-
-    //public void DidSelectItem(JewelItemButton jewelItemButton)
-    //{
-    //    if (jewelItemInfos.HasValue)
-    //    {
-    //        int itemIndex = jewelItemButtonList.IndexOf(jewelItemButton); //아이템이 누군지 알게되는 순간
-    //        //Debug.Log("나의 인덱스는 : " + itemIndex);
-
-    //        JewelItemInfo selectButton = jewelItemInfos.Value.jewelItemInfoList[itemIndex];
-    //        jewelItemButtonScript.jewelItemInfo = selectButton;
-    //    }
-    //}
 
     void AddJewelItemInfo()
     {
