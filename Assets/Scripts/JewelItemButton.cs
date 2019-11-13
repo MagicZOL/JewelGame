@@ -11,10 +11,6 @@ public class JewelItemButton : MonoBehaviour
 
     public JewelItemInfo? jewelItemInfo;
 
-    private void Start()
-    {
-        
-    }
     public void OnClick()
     {
         jewelItemDelegate(this);

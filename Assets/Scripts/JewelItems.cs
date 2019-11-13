@@ -37,7 +37,7 @@ public class JewelItems : MonoBehaviour
     }
     private void Awake()
     {
-        Sprite[] sprites = SpriteManager.Load();
+        Sprite[] sprites = SpriteManager.Load("Jewels");
         MakeImageCell(sprites);
 
         AddJewelItemInfo();
@@ -105,6 +105,10 @@ public class JewelItems : MonoBehaviour
 
             jewelItemInfos = new JewelItemInfos(jewelItemInfoList);
         }
+    }
+    public void PanelOffClick()
+    {
+        Destroy(gameObject);
     }
     //나갈때 저장
     private void OnApplicationQuit()
