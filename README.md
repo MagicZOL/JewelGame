@@ -30,6 +30,7 @@ Unity를 이용하여 만든 보석방치형게임입니다. <br>
 <ul>5. 보석 클릭시 돈을 얻는 기능<br>
 보석 클릭시 돈이 오르며 보유한 돈으로 아이템을 구입하실 수 있습니다.
  </ul>
+
 ***
 
 #### JewelGame을 해보세요!
@@ -42,11 +43,14 @@ Unity를 이용하여 만든 보석방치형게임입니다. <br>
 
 ***
 ## Engilsh
+
 # JewelGame
 **Jewel-proof game using Unity**
 
 Hello! <br>
 This is a jewel-proof game made using Unity.
+
+***
 
 **Feature introduction**
 
