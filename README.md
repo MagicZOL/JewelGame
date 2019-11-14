@@ -4,6 +4,7 @@
 안녕하세요! <br>
 Unity를 이용하여 만든 보석방치형게임입니다. <br>
 
+***
 ***JewelGame 디자인 소개*** / ***Introduction to JewelGame Design***
 
 ![switch](./Image/GIF.gif)
@@ -29,18 +30,18 @@ Unity를 이용하여 만든 보석방치형게임입니다. <br>
 <ul>5. 보석 클릭시 돈을 얻는 기능<br>
 보석 클릭시 돈이 오르며 보유한 돈으로 아이템을 구입하실 수 있습니다.
  </ul>
-___
+***
 
 #### JewelGame을 해보세요!
 
-___
+***
 
 궁금한 점 및 요청사항은 아래 이메일을 참고해주세요<br>
 구글 이메일 tnwls9721@gmil.com<br>
 네이버 이메일 chfhrtorthsk@naver.com<br>
 
 ***
-##Engilsh
+## Engilsh
 # JewelGame
 **Jewel-proof game using Unity**
 
@@ -68,11 +69,12 @@ You can check the items I got in the inventory. <br>
 <ul>5. The ability to get money by clicking on jewelry <br>
 When you click on jewelry, you can purchase items with the money you have. <br>
 </ul>
-___
+
+***
 
 #### Try JewellGame!
 
-___
+***
 
 Please refer to the email below for questions and requests.<br>
 Google Email tnwls9721@gmil.com<br>
