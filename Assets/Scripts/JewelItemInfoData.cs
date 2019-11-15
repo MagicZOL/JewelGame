@@ -28,13 +28,13 @@ public struct JewelEquipItemDatas
 public class JewelItemInfoData :MonoBehaviour
 {
     JewelEquipItemDatas? jewelEquipItemDatas;
+
     [SerializeField] TabChangePanel tabChangePanel;
     private void Awake()
     {
         if (!jewelEquipItemDatas.HasValue)
         {
             ItemData();
-
         }
     }
 
@@ -122,8 +122,88 @@ public class JewelItemInfoData :MonoBehaviour
             item8.description = "이제 당신은 광부의 신!";
             jewelEquipItemDataList.Add(item8);
 
+            JewelEquipItemData item9;
+            item9.name = "풀장착중";
+            item9.speed = 90;
+            item9.attack = 90;
+            item9.buyprize = 9000;
+            item9.count = 1;
+            item9.sellPrize = 900;
+            item9.description = "이제 당신은 광부의 신!";
+            jewelEquipItemDataList.Add(item9);
+
+            JewelEquipItemData item10;
+            item10.name = "풀장착중";
+            item10.speed = 100;
+            item10.attack = 100;
+            item10.buyprize = 10000;
+            item10.count = 1;
+            item10.sellPrize = 1000;
+            item10.description = "이제 당신은 광부의 신!";
+            jewelEquipItemDataList.Add(item10);
+
+            JewelEquipItemData item11;
+            item11.name = "풀장착중";
+            item11.speed = 110;
+            item11.attack = 110;
+            item11.buyprize = 110000;
+            item11.count = 1;
+            item11.sellPrize = 1100;
+            item11.description = "이제 당신은 광부의 신!";
+            jewelEquipItemDataList.Add(item11);
+
+            JewelEquipItemData item12;
+            item12.name = "풀장착중";
+            item12.speed = 120;
+            item12.attack = 120;
+            item12.buyprize = 12000;
+            item12.count = 1;
+            item12.sellPrize = 1200;
+            item12.description = "이제 당신은 광부의 신!";
+            jewelEquipItemDataList.Add(item12);
+
+            JewelEquipItemData item13;
+            item13.name = "풀장착중";
+            item13.speed = 130;
+            item13.attack = 130;
+            item13.buyprize = 13000;
+            item13.count = 1;
+            item13.sellPrize = 1300;
+            item13.description = "이제 당신은 광부의 신!";
+            jewelEquipItemDataList.Add(item13);
+
+            JewelEquipItemData item14;
+            item14.name = "풀장착중";
+            item14.speed = 140;
+            item14.attack = 140;
+            item14.buyprize = 14000;
+            item14.count = 1;
+            item14.sellPrize = 1400;
+            item14.description = "이제 당신은 광부의 신!";
+            jewelEquipItemDataList.Add(item14);
+
+            JewelEquipItemData item15;
+            item15.name = "풀장착중";
+            item15.speed = 150;
+            item15.attack = 150;
+            item15.buyprize = 15000;
+            item15.count = 1;
+            item15.sellPrize = 1500;
+            item15.description = "이제 당신은 광부의 신!";
+            jewelEquipItemDataList.Add(item15);
+
+            JewelEquipItemData item16;
+            item16.name = "풀장착중";
+            item16.speed = 160;
+            item16.attack = 160;
+            item16.buyprize = 16000;
+            item16.count = 1;
+            item16.sellPrize = 1600;
+            item16.description = "이제 당신은 광부의 신!";
+            jewelEquipItemDataList.Add(item16);
+
             jewelEquipItemDatas = new JewelEquipItemDatas(jewelEquipItemDataList);
-        tabChangePanel.jewelEquipItemDatas = jewelEquipItemDatas;
+            tabChangePanel.jewelEquipItemDatas = jewelEquipItemDatas;
     }
     private void OnApplicationQuit()
     {

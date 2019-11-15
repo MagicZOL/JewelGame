@@ -23,7 +23,7 @@ public class JewelItemButton : MonoBehaviour
         {
             JewelItemInfo jewelItem = jewelItemInfo.Value;
 
-            Money money = GameObject.Find("Money").GetComponent<Money>();
+            TextManager money = GameObject.Find("Money").GetComponent<TextManager>();
             money.prize = jewelItem.getPrize;
 
             money.PrizeValue();

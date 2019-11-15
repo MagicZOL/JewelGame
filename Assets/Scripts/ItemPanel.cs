@@ -12,19 +12,18 @@ public class ItemPanel : MonoBehaviour
 
     public JewelEquipItemData? jewelEquipItemData;
 
-    public int isTab;
+    public List<ScrollViewManager> scrollViewManager;
     private void Start()
     {
         itemPanelDelegate(this);
 
-        if(isTab==1)
+        if(scrollViewManager[0])
         {
             Prize();
         }
-
-        else if(isTab==2)
+        else if(scrollViewManager[1])
         {
-            SellPrize(); 
+            Sell();
         }
     }
 
@@ -32,16 +31,12 @@ public class ItemPanel : MonoBehaviour
     {
         if (jewelEquipItemData.HasValue)
         {
-            prizeText.text = jewelEquipItemData.Value.buyprize.ToString()+"원";
+            prizeText.text = jewelEquipItemData.Value.buyprize.ToString() + "원"; //상점버튼클릭시
         }
     }
 
-    //판매가격 출력
-    public void SellPrize()
+    public void Sell()
     {
-        if (jewelEquipItemData.HasValue)
-        {
-            prizeText.text = jewelEquipItemData.Value.sellPrize.ToString() + "원";
-        }
+        prizeText.text = jewelEquipItemData.Value.sellPrize.ToString() + "원"; //판매버튼 클릭시
     }
 }

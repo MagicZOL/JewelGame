@@ -11,10 +11,19 @@ public class ScrollViewManager : MonoBehaviour
     List<ItemPanel> itemList = new List<ItemPanel>();
 
     public JewelEquipItemDatas? jewelEquipItemDatas;
+
+    [SerializeField] TabChangePanel tabChangePanel;
+
+    List<ScrollViewManager> scrollViewManagerList = new List<ScrollViewManager>();
+
     private void Awake()
     {
         Sprite[] sprites = SpriteManager.Load("Items");
         MakeImageCell(sprites);
+        tabChangePanel.scrollViewManager = this;
+
+        scrollViewManagerList.Add(this);
+        Debug.Log(scrollViewManagerList.Count);
     }
 
     private void MakeImageCell(Sprite[] sprites)
@@ -35,6 +44,13 @@ public class ScrollViewManager : MonoBehaviour
                     itemPanel.jewelEquipItemData = selectItem;
                 }
             };
+
+            tabChangePanel.buttonNum = (buttonIndex) =>
+            {
+                itemPanel.scrollViewManager = scrollViewManagerList;
+            };
+
+            tabChangePanel.scrollViewManager = this; // 스크롤뷰메니저 전달
         }
     }
 }
