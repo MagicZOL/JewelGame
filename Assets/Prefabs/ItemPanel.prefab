@@ -255,6 +255,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prizeText: {fileID: 5537734562560149188}
+  buttonNum: 0
+  scrm:
+  - {fileID: 931886174126298820, guid: 0ddfe06f6738c764aac7def8321aa8e4, type: 3}
+  - {fileID: 1219296742868442466, guid: 7bdb5f98caefec94486c42a24e5875ca, type: 3}
 --- !u!1 &5537734564267359726
 GameObject:
   m_ObjectHideFlags: 0

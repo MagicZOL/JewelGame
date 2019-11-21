@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScrollViewManager : MonoBehaviour
+public class SellScrollViewManager : MonoBehaviour
 {
     [SerializeField] GameObject itemPanelPrefab;
     [SerializeField] RectTransform content;
@@ -18,7 +18,7 @@ public class ScrollViewManager : MonoBehaviour
     {
         Sprite[] sprites = SpriteManager.Load("Items");
         MakeImageCell(sprites);
-        tabChangePanel.scrollViewManager = this;
+        //tabChangePanel.scrollViewManager = this;
     }
 
     private void MakeImageCell(Sprite[] sprites)
@@ -28,7 +28,7 @@ public class ScrollViewManager : MonoBehaviour
             ItemPanel itemPanel = Instantiate(itemPanelPrefab, content).GetComponent<ItemPanel>();
             itemPanel.GetComponentInChildren<Image>().sprite = sprite;
             itemList.Add(itemPanel);
-
+            //itemPanel.scrList = ScrList;
             itemPanel.itemPanelDelegate = (itemPanelThis) =>
             {
                 if (jewelEquipItemDatas.HasValue)
@@ -39,7 +39,7 @@ public class ScrollViewManager : MonoBehaviour
                     itemPanel.itemPaneljewelEquipItemData = selectItem;
                 }
             };
-            tabChangePanel.scrollViewManager = this; // 스크롤뷰메니저 전달
+            //tabChangePanel.scrollViewManager = this; // 스크롤뷰메니저 전달
         }
     }
 }

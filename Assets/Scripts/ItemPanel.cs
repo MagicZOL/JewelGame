@@ -10,33 +10,33 @@ public class ItemPanel : MonoBehaviour
 
     public Action<ItemPanel> itemPanelDelegate;
 
-    public JewelEquipItemData? jewelEquipItemData;
+    public JewelEquipItemData? itemPaneljewelEquipItemData;
 
-    public List<ScrollViewManager> scrollViewManager;
     private void Start()
     {
         itemPanelDelegate(this);
-
-        if(scrollViewManager[0])
-        {
-            Prize();
-        }
-        else if(scrollViewManager[1])
-        {
-            Sell();
-        }
+        Menu();
     }
-
-    public void Prize()
+    public void Menu()
     {
-        if (jewelEquipItemData.HasValue)
+        if (itemPaneljewelEquipItemData.HasValue)
         {
-            prizeText.text = jewelEquipItemData.Value.buyprize.ToString() + "원"; //상점버튼클릭시
+                prizeText.text = itemPaneljewelEquipItemData.Value.buyprize.ToString() + "원"; //상점버튼클릭시
+                //prizeText.text = itemPaneljewelEquipItemData.Value.sellPrize.ToString() + "원"; //판매버튼 클릭시
         }
     }
 
-    public void Sell()
-    {
-        prizeText.text = jewelEquipItemData.Value.sellPrize.ToString() + "원"; //판매버튼 클릭시
-    }
+    //public void Prize()
+    //{
+    //    if (jewelEquipItemData.HasValue)
+    //    {
+    //        prizeText.text = jewelEquipItemData.Value.buyprize.ToString() + "원"; //상점버튼클릭시
+    //    }
+    //}
+
+    //public void Sell()
+    //{
+    //    if(jewelEquipItemData.HasValue)
+    //        prizeText.text = jewelEquipItemData.Value.sellPrize.ToString() + "원"; //판매버튼 클릭시
+    //}
 }

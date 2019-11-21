@@ -11,7 +11,8 @@ public class TabChangePanel : MonoBehaviour
 
     [HideInInspector] public ScrollViewManager scrollViewManager;
 
-    public Action<int> buttonNum;
+    public List<ScrollViewManager> scrollViewManagers;
+
     private void Awake()
     {
         jewelEquipItemDatas = FileManager<JewelEquipItemDatas>.Load(Constant.ItemFileName);
@@ -20,16 +21,10 @@ public class TabChangePanel : MonoBehaviour
 
     public void ShopOnClick(int buttonIndex)
     {
-        buttonNum(buttonIndex);
-
-        if (buttonIndex > TabScrollViewPrefab.Length - 1)
-            return;
-
         if (jewelEquipItemDatas.HasValue)
         {
             scrollViewManager.jewelEquipItemDatas = jewelEquipItemDatas;
         }
-
 
         for (int i = 0; i < TabScrollViewPrefab.Length; i++)
         {
