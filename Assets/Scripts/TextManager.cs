@@ -22,42 +22,41 @@ public class TextManager : MonoBehaviour
         textDataInfo = FileManager<TextDataInfo>.Load(Constant.moneyFileName);
         scrollViewManager.textDataInfo = textDataInfo;
         sellScrollViewManager.textDataInfo = textDataInfo;
+
         if(textDataInfo.HasValue)
         {
             moneyText.text = textDataInfo.Value.money.ToString();
         }
-
-        scrollViewManager.ItemNum = (N) =>
-        {
-            Debug.Log("num :" + N);
-        };
-
         BuyItemClick();
     }
     public void PrizeValue()
     {
         int getprize = int.Parse(moneyText.text) + prize;
         moneyText.text = getprize.ToString();
-
-        TextDataInfo newMoney = textDataInfo.Value;
-        newMoney.money = int.Parse(moneyText.text);
-
-        textDataInfo = newMoney;
     }
 
     private void OnApplicationQuit()
     {
+        SaveText();
         if(textDataInfo.HasValue)
         FileManager<TextDataInfo>.Save(textDataInfo.Value, Constant.moneyFileName);
     }
 
+    public void SaveText()
+    {
+        TextDataInfo newMoney = textDataInfo.Value;
+        newMoney.money = int.Parse(moneyText.text);
+        newMoney.speed = int.Parse(speedText.text);
+        newMoney.attack = int.Parse(attackText.text);
+        textDataInfo = newMoney;
+    }
     public void BuyItemClick()
     {
-        // scrollViewManager.ItemNum = (num) =>
-        // {
-        //     Debug.Log("num :" + num);
-        //     // speedText.text = jewelEquipItemDatas.Value.jewelEquipItemList[num].speed.ToString();
-        //     // attackText.text = jewelEquipItemDatas.Value.jewelEquipItemList[num].attack.ToString();
-        // };
+        scrollViewManager.ItemNumber = (num) =>
+        {
+            speedText.text = jewelEquipItemDatas.Value.jewelEquipItemList[num].speed.ToString();
+            attackText.text = jewelEquipItemDatas.Value.jewelEquipItemList[num].attack.ToString();
+            moneyText.text = (int.Parse(moneyText.text) - jewelEquipItemDatas.Value.jewelEquipItemList[num].buyprize).ToString();
+        };
     }
 }

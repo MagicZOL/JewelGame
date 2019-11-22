@@ -9,7 +9,7 @@ public class ItemPanel : MonoBehaviour
     [SerializeField] Text prizeText;
 
     public Action<ItemPanel> itemPanelDelegate;
-
+    public Action<ItemPanel> itemPanelOnClickDelegate;
     public JewelEquipItemData? itemPaneljewelEquipItemData;
 
     public TextDataInfo? textDataInfo;
@@ -28,21 +28,17 @@ public class ItemPanel : MonoBehaviour
         }
     }
 
+    private void Update() {
+        // if(itemPaneljewelEquipItemData.Value.buyprize > textDataInfo.Value.money)
+        // {
+        //     GetComponentInChildren<Button>().interactable=false;
+        // }
+    }
     public void ButtonClick()
     {
-        itemPanelDelegate(this);
+        if(itemPaneljewelEquipItemData.Value.buyprize <= textDataInfo.Value.money)
+            itemPanelOnClickDelegate(this);
+        else
+        return;
     }
-    //public void Prize()
-    //{
-    //    if (jewelEquipItemData.HasValue)
-    //    {
-    //        prizeText.text = jewelEquipItemData.Value.buyprize.ToString() + "원"; //상점버튼클릭시
-    //    }
-    //}
-
-    //public void Sell()
-    //{
-    //    if(jewelEquipItemData.HasValue)
-    //        prizeText.text = jewelEquipItemData.Value.sellPrize.ToString() + "원"; //판매버튼 클릭시
-    //}
 }

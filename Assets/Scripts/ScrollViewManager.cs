@@ -17,14 +17,12 @@ public class ScrollViewManager : MonoBehaviour
 
     public TextDataInfo? textDataInfo;
 
-    public Action<int> ItemNum;
+    public Action<int> ItemNumber;
+
     private void Awake()
     {
         Sprite[] sprites = SpriteManager.Load("Items");
         MakeImageCell(sprites);
-
-        int i=1;
-        //ItemNum(i);
     }
 
     private void MakeImageCell(Sprite[] sprites)
@@ -35,13 +33,22 @@ public class ScrollViewManager : MonoBehaviour
             itemPanel.GetComponentInChildren<Image>().sprite = sprite;
             itemList.Add(itemPanel);
             
+            itemPanel.itemPanelOnClickDelegate = (itemPanelThis) =>
+            {
+                if (jewelEquipItemDatas.HasValue)
+                {
+                    int itemIndex = itemList.IndexOf(itemPanelThis);
+
+                    ItemNumber(itemIndex);
+                }
+            };
+
             itemPanel.itemPanelDelegate = (itemPanelThis) =>
             {
                 if (jewelEquipItemDatas.HasValue)
                 {
                     int itemIndex = itemList.IndexOf(itemPanelThis);
 
-                    //ItemNum(itemIndex);
                     JewelEquipItemData selectItem = jewelEquipItemDatas.Value.jewelEquipItemList[itemIndex];
                     itemPanel.itemPaneljewelEquipItemData = selectItem;
 
