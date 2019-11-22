@@ -13,12 +13,10 @@ public class ScrollViewManager : MonoBehaviour
     public JewelEquipItemDatas? jewelEquipItemDatas;
 
     public TabChangePanel tabChangePanel;
-
     private void Awake()
     {
         Sprite[] sprites = SpriteManager.Load("Items");
         MakeImageCell(sprites);
-        tabChangePanel.scrollViewManager = this;
     }
 
     private void MakeImageCell(Sprite[] sprites)
@@ -39,7 +37,6 @@ public class ScrollViewManager : MonoBehaviour
                     itemPanel.itemPaneljewelEquipItemData = selectItem;
                 }
             };
-            tabChangePanel.scrollViewManager = this; // 스크롤뷰메니저 전달
         }
     }
 }

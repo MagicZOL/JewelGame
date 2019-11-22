@@ -8,27 +8,24 @@ public class SellScrollViewManager : MonoBehaviour
     [SerializeField] GameObject itemPanelPrefab;
     [SerializeField] RectTransform content;
 
-    List<ItemPanel> itemList = new List<ItemPanel>();
+    List<SellItemPanel> itemList = new List<SellItemPanel>();
 
     public JewelEquipItemDatas? jewelEquipItemDatas;
-
-    public TabChangePanel tabChangePanel;
 
     private void Awake()
     {
         Sprite[] sprites = SpriteManager.Load("Items");
         MakeImageCell(sprites);
-        //tabChangePanel.scrollViewManager = this;
     }
 
     private void MakeImageCell(Sprite[] sprites)
     {
         foreach (Sprite sprite in sprites)
         {
-            ItemPanel itemPanel = Instantiate(itemPanelPrefab, content).GetComponent<ItemPanel>();
+            SellItemPanel itemPanel = Instantiate(itemPanelPrefab, content).GetComponent<SellItemPanel>();
             itemPanel.GetComponentInChildren<Image>().sprite = sprite;
             itemList.Add(itemPanel);
-            //itemPanel.scrList = ScrList;
+
             itemPanel.itemPanelDelegate = (itemPanelThis) =>
             {
                 if (jewelEquipItemDatas.HasValue)
@@ -39,7 +36,6 @@ public class SellScrollViewManager : MonoBehaviour
                     itemPanel.itemPaneljewelEquipItemData = selectItem;
                 }
             };
-            //tabChangePanel.scrollViewManager = this; // 스크롤뷰메니저 전달
         }
     }
 }

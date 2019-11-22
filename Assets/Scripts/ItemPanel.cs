@@ -15,14 +15,9 @@ public class ItemPanel : MonoBehaviour
     private void Start()
     {
         itemPanelDelegate(this);
-        Menu();
-    }
-    public void Menu()
-    {
         if (itemPaneljewelEquipItemData.HasValue)
         {
-                prizeText.text = itemPaneljewelEquipItemData.Value.buyprize.ToString() + "원"; //상점버튼클릭시
-                //prizeText.text = itemPaneljewelEquipItemData.Value.sellPrize.ToString() + "원"; //판매버튼 클릭시
+            prizeText.text = itemPaneljewelEquipItemData.Value.buyprize.ToString() + "원"; //상점버튼클릭시
         }
     }
 
