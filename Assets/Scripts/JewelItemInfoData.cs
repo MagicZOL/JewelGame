@@ -30,6 +30,7 @@ public class JewelItemInfoData :MonoBehaviour
     JewelEquipItemDatas? jewelEquipItemDatas;
 
     [SerializeField] TabChangePanel tabChangePanel;
+    [SerializeField] TextManager textManager;
     private void Awake()
     {
         if (!jewelEquipItemDatas.HasValue)
@@ -57,7 +58,7 @@ public class JewelItemInfoData :MonoBehaviour
             item2.speed = 20;
             item2.attack = 20;
             item2.buyprize = 2000;
-            item2.count = 1;
+            item2.count = 0;
             item2.sellPrize = 200;
             item2.description = "캐기 좋은 곡괭이이다.";
             jewelEquipItemDataList.Add(item2);
@@ -204,6 +205,7 @@ public class JewelItemInfoData :MonoBehaviour
 
             jewelEquipItemDatas = new JewelEquipItemDatas(jewelEquipItemDataList);
             tabChangePanel.jewelEquipItemDatas = jewelEquipItemDatas;
+            textManager.jewelEquipItemDatas = jewelEquipItemDatas;
     }
     private void OnApplicationQuit()
     {

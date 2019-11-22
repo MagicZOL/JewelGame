@@ -12,6 +12,8 @@ public class SellScrollViewManager : MonoBehaviour
 
     public JewelEquipItemDatas? jewelEquipItemDatas;
 
+    public TextDataInfo? textDataInfo;
+
     private void Awake()
     {
         Sprite[] sprites = SpriteManager.Load("Items");

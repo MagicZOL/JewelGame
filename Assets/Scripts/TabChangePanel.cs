@@ -6,12 +6,10 @@ using UnityEngine;
 public class TabChangePanel : MonoBehaviour
 {
     [SerializeField] GameObject[] TabScrollViewPrefab;
-
-    public JewelEquipItemDatas? jewelEquipItemDatas;
-
     [SerializeField] ScrollViewManager scrollViewManager;
     [SerializeField] SellScrollViewManager sellScrollViewManager;
 
+    public JewelEquipItemDatas? jewelEquipItemDatas;
     public List<GameObject> scrollList;
     private void Awake()
     {

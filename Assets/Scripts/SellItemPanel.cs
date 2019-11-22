@@ -18,5 +18,10 @@ public class SellItemPanel : MonoBehaviour
         {
             prizeText.text = itemPaneljewelEquipItemData.Value.sellPrize.ToString() + "원"; //판매버튼 클릭시
         }
+
+        if(itemPaneljewelEquipItemData.Value.count == 0)
+        {
+            GetComponentInChildren<Button>().interactable=false;
+        }
     }
 }

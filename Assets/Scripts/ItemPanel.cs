@@ -12,6 +12,8 @@ public class ItemPanel : MonoBehaviour
 
     public JewelEquipItemData? itemPaneljewelEquipItemData;
 
+    public TextDataInfo? textDataInfo;
+
     private void Start()
     {
         itemPanelDelegate(this);
@@ -19,8 +21,17 @@ public class ItemPanel : MonoBehaviour
         {
             prizeText.text = itemPaneljewelEquipItemData.Value.buyprize.ToString() + "원"; //상점버튼클릭시
         }
+
+        if(itemPaneljewelEquipItemData.Value.buyprize > textDataInfo.Value.money)
+        {
+            GetComponentInChildren<Button>().interactable=false;
+        }
     }
 
+    public void ButtonClick()
+    {
+        itemPanelDelegate(this);
+    }
     //public void Prize()
     //{
     //    if (jewelEquipItemData.HasValue)

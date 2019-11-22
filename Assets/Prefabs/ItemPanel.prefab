@@ -194,7 +194,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5537734563277857276}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1721703377983806437}
+        m_MethodName: ButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5537734563564384804
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,10 +266,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prizeText: {fileID: 5537734562560149188}
-  buttonNum: 0
-  scrm:
-  - {fileID: 931886174126298820, guid: 0ddfe06f6738c764aac7def8321aa8e4, type: 3}
-  - {fileID: 1219296742868442466, guid: 7bdb5f98caefec94486c42a24e5875ca, type: 3}
 --- !u!1 &5537734564267359726
 GameObject:
   m_ObjectHideFlags: 0
