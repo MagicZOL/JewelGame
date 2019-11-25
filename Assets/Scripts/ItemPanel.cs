@@ -29,10 +29,11 @@ public class ItemPanel : MonoBehaviour
     }
 
     private void Update() {
-        // if(itemPaneljewelEquipItemData.Value.buyprize > textDataInfo.Value.money)
-        // {
-        //     GetComponentInChildren<Button>().interactable=false;
-        // }
+        textDataInfo =FileManager<TextDataInfo>.Load(Constant.moneyFileName);
+        if(itemPaneljewelEquipItemData.Value.buyprize > textDataInfo.Value.money)
+        {
+            GetComponentInChildren<Button>().interactable=false;
+        }
     }
     public void ButtonClick()
     {

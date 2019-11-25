@@ -57,6 +57,7 @@ public class TextManager : MonoBehaviour
             speedText.text = jewelEquipItemDatas.Value.jewelEquipItemList[num].speed.ToString();
             attackText.text = jewelEquipItemDatas.Value.jewelEquipItemList[num].attack.ToString();
             moneyText.text = (int.Parse(moneyText.text) - jewelEquipItemDatas.Value.jewelEquipItemList[num].buyprize).ToString();
+            OnApplicationQuit();
         };
     }
 }
