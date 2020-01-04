@@ -7,7 +7,7 @@ Unity를 이용하여 만든 보석방치형게임입니다. <br>
 ***
 ***JewelGame 게임 영상*** / ***Video of the JewelGame game***
 
-![switch](./Image/GIF.gif)
+![game](./Image/GIF.gif)
 
 ***
 **게임소개**
