@@ -5,7 +5,7 @@
 Unity를 이용하여 만든 보석방치형게임입니다. <br>
 
 ***
-***JewelGame 디자인 소개*** / ***Introduction to JewelGame Design***
+***JewelGame 게임 영상*** / ***Video of the JewelGame game***
 
 ![switch](./Image/GIF.gif)
 
@@ -83,4 +83,7 @@ When you click on jewelry, you can purchase items with the money you have. <br>
 Please refer to the email below for questions and requests.<br>
 Google Email tnwls9721@gmil.com<br>
 Naver E-mail chfhrtorthsk@naver.com<br>
+
+***
+
 ![anima](./Image/anima.png)
